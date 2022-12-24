@@ -11,6 +11,7 @@ interface UserResponse {
 interface UserData {
   email: string
   password: string
+  role?: string
   salt?: string
   activationCode?: string
   created?: string

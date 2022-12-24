@@ -24,6 +24,11 @@ const schema: mongoose.Schema = new Schema({
     minlength: 5,
     maxlength: 1000,
   },
+  role: {
+    type: String,
+    minlength: 5,
+    maxlength: 100,
+  },
   salt: {
     type: String,
     minlength: 5,

@@ -186,6 +186,11 @@ components:
           minLength: 5
           maxLength: 1000
           example: '558ba633ad85r7882d6087gjh58b2d663a7e2e2'
+        role:
+          type: string
+          minLength: 5
+          maxLength: 1000
+          example: 'admin'
         salt:
           type: string
           minLength: 5

@@ -63,10 +63,12 @@ const join = async (
     const passwordData = pwd.create(password)
     const activationCode = helper.randomNumber(1000, 10000).toString()
     const created = new Date().toISOString()
+    const role = 'guest'
     const data = {
       email,
       salt: passwordData.salt,
       password: passwordData.hash,
+      role: role,
       activationCode,
       created,
       updated: created,
