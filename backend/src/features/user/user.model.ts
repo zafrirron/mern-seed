@@ -27,7 +27,7 @@ const schema: mongoose.Schema = new Schema({
   role: {
     type: String,
     minlength: 5,
-    maxlength: 100,
+    maxlength: 20,
   },
   salt: {
     type: String,
