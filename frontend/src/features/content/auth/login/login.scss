@@ -1,0 +1,74 @@
+@import '../../../core/themes/themes.scss';
+.content {
+    height: 100%;
+    .icon {
+        font-size: $font-size-big;
+        padding-right: 10px;
+    }
+    >.title {
+        padding: 50px 20px 30px 20px;
+        font-size: $font-size-big;
+        &:first-child {
+            padding-top: 10px;
+        }
+    }
+    >.text {
+        padding: 10px 20px 10px 20px;
+        font-size: $font-size-normal;
+        &:last-child {
+            padding-bottom: 20px;
+        }
+    }
+    >.form {
+        text-align: center;
+        >*:focus {
+            outline: none;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:focus {
+            transition: background-color 600000s 0s, color 600000s 0s;
+        }
+        input[data-autocompleted] {
+            background-color: transparent !important;
+        }
+        >.text-input {
+            display: block;
+            width: 30%;
+            margin: 5% auto 0 auto;
+            padding: 10px;
+            font-size: $font-size-normal;
+            border-radius: $border-radius-small;
+            background: transparent !important;
+        }
+        >.password-input {
+            display: block;
+            width: 30%;
+            margin: 5% auto 0 auto;
+            padding: 10px;
+            font-size: $font-size-normal;
+            border-radius: $border-radius-small;
+            background: transparent !important;
+        }
+        >.input-error {
+            @include theme() {
+                border: 1px solid get('color-input-error');
+            }
+        }
+        >.button-submit {
+            width: 30%;
+            margin: 0;
+            margin-top: 5%;
+            padding: 10px;
+            font-size: $font-size-big;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: $border-radius-small;
+            transition: $hover-transition-slow;
+        }
+    }
+    >.loader {
+        margin-top: 10%;
+        text-align: center;
+    }
+}

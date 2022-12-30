@@ -32,6 +32,7 @@ const check = async (
       _id: 1,
       email: 1,
       active: 1,
+      role: 1,
       created: 1,
       updated: 1,
     }
@@ -44,6 +45,7 @@ const check = async (
   const result = {
     id: user._id,
     email: user.email,
+    role: user.role,
     created: user.created,
     updated: user.updated,
   }
@@ -160,6 +162,7 @@ const login = async (
   const result = {
     id: user.id,
     email: user.email,
+    role: user.role,
     created: user.created,
     updated: user.updated,
   }

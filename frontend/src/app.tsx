@@ -3,20 +3,18 @@ import { useEffect } from 'react'
 import { RootState } from './core/store/store'
 import { useAppDispatch } from './core/hooks/useStore'
 import { useSelector } from 'react-redux'
-import { homeSlice } from './features/home'
-import { authSlice } from './features/auth/auth'
+import { homeSlice } from './features/content/home'
+import { authSlice } from './features/content/auth/auth'
 import { toast } from 'react-toastify'
+import Notification from './components/notification/notification'
 import axios from 'axios'
 import useConfig from './core/hooks/useConfig'
-import Navigation from './common/navigation/navigation'
-import Background from './common/background/background'
-import Routing from './core/routing/routing'
-import Notification from './common/notification/notification'
 import useSocket from './core/hooks/useSocket'
+import Routing from './core/routing/routing'
 
 function App() {
   const dispatch = useAppDispatch()
-  const { apiUrl, theme } = useSelector((state: RootState) => state.home)
+  const { apiUrl } = useSelector((state: RootState) => state.home)
 
   const { getApiUrl } = useConfig()
   const { socket } = useSocket()
@@ -85,13 +83,11 @@ function App() {
   }
 
   return (
-    <div className={`app-container ${theme}`}>
-      <div className="app-content">
-        <Background />
-        <Navigation />
-        <Routing />
-        <Notification />
-      </div>
+    <div className="app-container">
+        <div className="app-content">
+          <Routing />
+          <Notification />
+        </div>
     </div>
   )
 }

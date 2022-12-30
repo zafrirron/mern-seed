@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { homeSlice } from '../../features/home'
-import { authSlice } from '../../features/auth/auth'
+import { homeSlice } from '../../features/content/home'
+import { authSlice } from '../../features/content/auth/auth'
 
 import {
   persistStore,

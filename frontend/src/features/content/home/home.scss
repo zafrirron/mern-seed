@@ -1,0 +1,52 @@
+@import '../../../core/themes/themes.scss';
+.content {
+    text-align: left;
+    .icon {
+        padding-right: 10px;
+    }
+    >.title {
+        padding: 50px 20px 30px 20px;
+        font-size: $font-size-big;
+        &:first-child {
+            padding-top: 10px;
+        }
+    }
+    >.subtitle {
+        padding: 50px 20px 30px 20px;
+        font-size: $font-size-big;
+        font-style: italic;
+    }
+    >.text {
+        padding: 10px 20px 10px 20px;
+        font-size: $font-size-normal;
+        &:last-child {
+            padding-bottom: 20px;
+        }
+        >.note {
+            margin-top: 30px;
+            font-size: $font-size-normal;
+            font-style: italic;
+        }
+    }
+    >.grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        padding: 0 20px 0 20px;
+        font-size: $font-size-normal;
+        >code {
+            margin: 0;
+            padding: 0;
+        }
+        &:last-child {
+            padding-bottom: 20px;
+        }
+        >.link {
+            @include theme() {
+                color: get('color-primary');
+            }
+        }
+    }
+}

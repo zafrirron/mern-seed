@@ -67,6 +67,7 @@ const check = async (
       _id: 1,
       email: 1,
       password: 1,
+      role: 1,
       salt: 1,
       active: 1,
       created: 1,
@@ -80,6 +81,7 @@ const check = async (
       id: user._id,
       email: user.email,
       active: user.active,
+      role: user.role,
       created: user.created,
       updated: user.updated,
     }

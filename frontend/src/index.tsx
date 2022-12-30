@@ -1,4 +1,4 @@
-import './index.scss'
+//import './index.scss'
 import { Provider } from 'react-redux'
 import { store, persistor } from './core/store/store'
 import reportWebVitals from './reportWebVitals'

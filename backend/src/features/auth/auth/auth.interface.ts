@@ -4,6 +4,7 @@ interface UserResponse {
   id: string
   email: string
   active?: boolean
+  role?: string
   created: string
   updated: string
 }

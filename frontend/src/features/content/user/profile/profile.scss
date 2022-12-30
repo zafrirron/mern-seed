@@ -1,0 +1,60 @@
+@import '../../../../core/themes/themes.scss';
+.content {
+    height: 100%;
+    .icon {
+        font-size: $font-size-big;
+        padding-right: 10px;
+    }
+    >.title {
+        padding: 50px 20px 30px 20px;
+        font-size: $font-size-big;
+        &:first-child {
+            padding-top: 10px;
+        }
+    }
+    >.text {
+        padding: 0 20px;
+        font-size: $font-size-small;
+        word-break: break-all;
+        &:last-child {
+            padding-bottom: 20px;
+        }
+        >pre {
+            word-break: break-all;
+        }
+    }
+    >.button-remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30%;
+        margin: 0;
+        margin: 10px;
+        padding: 10px;
+        font-size: $font-size-small;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        border-radius: $border-radius-small;
+        transition: $hover-transition-slow;
+        text-align: center;
+        @include theme() {
+            color: get('color-primary');
+            background: get('bg-button');
+        }
+        &:hover {
+            @include theme() {
+                background: get('bg-button-hover');
+            }
+        }
+    }
+    >.button {
+        display: flex;
+        width: 20%;
+        float: right;
+    }
+    >.loader {
+        margin-top: 10%;
+        text-align: center;
+    }
+}

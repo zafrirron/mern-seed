@@ -1,0 +1,21 @@
+@import '../../../core/themes/themes.scss';
+.content {
+    height: 100%;
+    >.title {
+        padding: 50px 20px 30px 20px;
+        font-size: $font-size-large;
+        &:first-child {
+            padding-top: 10px;
+        }
+        >.icon {
+            padding-right: 10px;
+        }
+    }
+    >.text {
+        padding: 10px 20px 10px 20px;
+        font-size: $font-size-big;
+        &:last-child {
+            padding-bottom: 20px;
+        }
+    }
+}

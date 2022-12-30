@@ -10,6 +10,7 @@ Modern, complete boilerplate for MERN stack development with TypeScript and Dock
 
 ## Introduction
 
+Based on a great job of the originator, added MUI dashboard UI with simple dynamic configuration 
 A modern, clean, and consistent boilerplate using the best practices for Node.js and React, keeping scalability and performance in mind. The advanced structure allows building applications of any size.
 
 ## Support
