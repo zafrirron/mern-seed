@@ -29,5 +29,21 @@ const remove = async (id: string): Promise<any> => {
   return true
 }
 
-export default { check, remove }
-export { check, remove }
+/**
+ * Get all users
+ * @param sort string
+ * @param page number
+ * @param perpage number
+ * @returns object
+ */
+
+const getAll = async (sort: string ,page: number,perPage: number): Promise<any> => {
+  const result = await User.find().sort({'created': 'asc'}).limit(perPage).skip(perPage * page)
+  if (!result) {
+    throw new ClientError(1002, 'no results found')
+  }
+  return result
+}
+
+export default { check, remove, getAll }
+export { check, remove, getAll }

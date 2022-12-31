@@ -74,7 +74,42 @@ const remove = async (
   }
 }
 
+/**
+ * Get all Users
+ * @param req object
+ * @param res object
+ * @param next object
+ * @returns object
+ */
+const getAll = async (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction
+): Promise<express.Response<any, Record<string, any>>> => {
+  try {
+    show.debug('[USERS][GETALL] Request'+JSON.stringify(req.body))
+    const { sort, page, perPage } = req.body
+    if (!("sort" in req.body) || !("page"in req.body) || !("perPage" in req.body)) {
+      throw new ClientError(1001, 'parameters not found')
+    } else {
+      let result = await profile.getAll(sort,page,perPage)
+      show.debug('[USERS][GETALL] Success')
+      return response.send(res, 200, result, false)
+    }
+  } catch (err: any) {
+    show.debug(
+      `[USERS][GETALL] Error ${err.type} ${err.code} ${err.message}`
+    )
+    if (err.type === 'client') {
+      return response.send(res, 400, false, err)
+    } else {
+      return response.send(res, 500, false, err)
+    }
+  }
+}
+
 export default {
   check,
   remove,
+  getAll
 }

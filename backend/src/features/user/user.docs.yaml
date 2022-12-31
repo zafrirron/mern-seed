@@ -159,6 +159,95 @@ paths:
                         code: 5000,
                         message: 'internal server error',
                       }
+  /api/user/users/getall:
+    post:
+      tags: [List]
+      summary: Return all users
+      requestBody:
+        content:
+          application/json:
+            schema:      # Request body contents
+              type: object
+              properties:
+                sort:
+                  type: string
+                page:
+                  type: integer
+                perPage:
+                  type: integer
+              example:   # Sample object
+                sort: 'email'
+                page: 1
+                perPage: 5
+      responses:
+        200:
+          description: Success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+              examples:
+                success:
+                  summary: Success response
+                  value:
+                    success: true
+                    status: 200
+                    result:
+                      id: '633ad08a63a7e2e28558b2d6'
+                      email: 'johndoe@example.com'
+                      active: true
+                      created: '2022-07-03T13:17:15.271+00:00'
+                      updated: '2022-07-03T13:17:15.271+00:00'
+                    error: false
+        400:
+          description: Bad request response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+              examples:
+                success:
+                  summary: Error response
+                  value:
+                    success: false
+                    status: 400
+                    result: false
+                    error:
+                      { type: 'client', code: 1001, message: 'bad request' }
+        401:
+          description: Bad request response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+              examples:
+                success:
+                  summary: Error response
+                  value:
+                    success: false
+                    status: 401
+                    result: false
+                    error:
+                      { type: 'client', code: 1001, message: 'bad request' }
+        500:
+          description: Server error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+              examples:
+                error:
+                  summary: Error response
+                  value:
+                    success: false
+                    status: 500
+                    result: false
+                    error:
+                      {
+                        type: 'server',
+                        code: 5000,
+                        message: 'internal server error',
+                      }
 components:
   schemas:
     UserModel:
