@@ -1,8 +1,6 @@
 import './dashboard.scss'
 import * as React from 'react';
-import { RootState } from '../../core/store/store'
-import { useSelector } from 'react-redux'
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -14,7 +12,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Divider from '@mui/material/Divider';
-import { PaletteMode } from '@mui/material';
 import Menuitems from '../../components/menu/menuitems'
 import Usermenu from '../../components/navigation/user-menu'
 import Copyright from '../../components/copyright/copyright'
@@ -83,16 +80,9 @@ const Dashboard = (props : dashboardProps) => {
 
   const [open, setOpen] = React.useState(true);
   
-  const { theme } = useSelector((state: RootState) => state.home)
-  //const theme  = "light"
   const toggleDrawer = () => {
     setOpen(!open);
   };
-  const mdTheme = createTheme({
-    palette: {
-      mode: theme as PaletteMode,
-    },
-  });
 
   return (
     <ThemeProvider theme={Dashboardtheme()}>
